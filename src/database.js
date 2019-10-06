@@ -1,10 +1,12 @@
+//mydb = dbConnect(MySQL(), user='joinnus_web_dev', password='MHcj25ZGHBgE258eaJJD', dbname='joinnus_database_development', host='jnus-cluster-development.cluster-cpf6h8jowlmg.us-west-2.rds.amazonaws.com');
+
 const mysql = require('mysql');
 
 const mysqlConnection = mysql.createConnection({
-  host: 'localhost',
-  user: 'webuser',
-  password: 'yoshio12qw',
-  database: 'company',
+  host: 'jnus-cluster-development.cluster-cpf6h8jowlmg.us-west-2.rds.amazonaws.com',
+  user: 'joinnus_web_dev',
+  password: 'MHcj25ZGHBgE258eaJJD',
+  database: 'joinnus_database_development',
   multipleStatements: true
 });
 
@@ -18,25 +20,3 @@ mysqlConnection.connect(function (err) {
 });
 
 module.exports = mysqlConnection;
-/*
-CREATE DATABASE IF NOT EXISTS company;
-
-USE company;
-
-CREATE TABLE employee (
-  id INT(11) NOT NULL AUTO_INCREMENT,
-  name VARCHAR(45) DEFAULT NULL,
-  salary INT(11) DEFAULT NULL,
-  PRIMARY KEY(id)
-);
-
-DESCRIBE employee;
-
-INSERT INTO employee values
-  (1, 'Ryan Ray', 20000),
-  (2, 'Joe McMillan', 40000),
-  (3, 'John Carter', 50000);
-
-SELECT * FROM employee;
-
-*/
